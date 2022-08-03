@@ -22,7 +22,7 @@ $app->get('/', function() use($app) {
 
   return $app['twig']->render('index.twig', [
     'environment' => $_ENV["INBENTA_ENV"],
-    'organization ' => $_ENV["ORG_NAME"]
+    'organization' => $_ENV["ORG_NAME"]
   ]);
 
 });
