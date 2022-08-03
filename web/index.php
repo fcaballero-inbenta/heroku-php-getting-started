@@ -19,7 +19,12 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 
 $app->get('/', function() use($app) {
   $app['monolog']->addDebug('logging output.');
-  return $app['twig']->render('index.twig');
+
+  return $app['twig']->render('index.twig', [
+    'environment' => $_ENV["INBENTA_ENV"],
+    'organization ' => $_ENV["ORG_NAME"]
+  ]);
+
 });
 
 $app->run();
